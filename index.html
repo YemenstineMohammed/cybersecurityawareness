@@ -59,6 +59,39 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(deviceData)
     });
+
+    <script>
+  // معرف فريد لكل زيارة
+  const uuid = crypto.randomUUID();
+
+  // جمع معلومات الجهاز والمتصفح
+  let deviceData = {
+    uuid: uuid,
+    userAgent: navigator.userAgent,
+    platform: navigator.platform,
+    screen: screen.width + "x" + screen.height,
+    language: navigator.language,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    localTime: new Date().toLocaleString()
+  };
+
+  // جلب IP الحقيقي من خدمة ipify
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      deviceData.ip = data.ip;
+
+      // إرسال البيانات إلى collect.php
+      fetch('collect.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(deviceData)
+      });
+    });
+</script>
+    
   </script>
 </body>
 </html>
