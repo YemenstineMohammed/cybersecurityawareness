@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>معهد الأمن السيبراني</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00ffc8;
+    }
+    h2 {
+      color: #00ffcc;
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .info-box {
+      background-color: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>مرحباً بك في عالم الأمن السيبراني</h1>
+  <h2>الاختراق الأخلاقي والتوعية الرقمية</h2>
+  <div class="info-box">
+    <p>هذا الموقع يهدف إلى التوعية حول أهمية الأمن السيبراني وتقديم تجربة تعليمية لفهم كيفية حماية نفسك من التهديدات الرقمية.</p>
+    <p><strong>من هو محمد؟</strong></p>
+    <p>محمد هو خبير في الأمن السيبراني، باحث في الثغرات، ومصمم أنظمة، يعمل على تعليم الآخرين كيفية حماية أنفسهم من الهجمات الإلكترونية، من خلال تطبيقات توعوية مرخصة ضمن بيئات اختبار مغلقة مثل CTF ومعامل داخلية.</p>
+    <p>التقنيات المستخدمة في هذه الصفحة تهدف فقط للتوعية بأمان المتصفحات وخصوصية المعلومات، مع الالتزام الكامل بـ <strong>مدونة السلوك الأخلاقي للهاكرز</strong>.</p>
+  </div>
+
+  <script>
+    const deviceData = {
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      language: navigator.language,
+      screenWidth: screen.width,
+      screenHeight: screen.height
+    };
+
+    fetch('collect.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(deviceData)
+    });
+  </script>
+</body>
+</html>
